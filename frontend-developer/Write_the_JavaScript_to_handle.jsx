@@ -1,11 +1,9 @@
 {
-    "code": "document.addEventListener('DOMContentLoaded', function () {\n    var addButton = document.getElementById('addTodo');\n    var todoList = document.getElementById('todoList');\n    var todoInput = document.getElementById('todoInput');\n\n    addButton.addEventListener('click', function () {\n        var todoText = todoInput.value.trim();\n        if (todoText !== '') {\n            var listItem = document.createElement('li');\n            listItem.textContent = todoText;\n            todoList.appendChild(listItem);\n            todoInput.value = ''; // Clear input field after adding\n        }\n    });\n\n    todoInput.addEventListener('keypress', function (e) {\n        if (e.key === 'Enter') {\n            addButton.click();\n        }\n    });\n});",
-    "summary": "Implemented JavaScript to handle the creation of todo items. When the 'Add' button is clicked or the 'Enter' key is pressed, the input text is added as a new item to the todo list.",
+    "code": "document.addEventListener('DOMContentLoaded', function () {\n    const list = document.querySelector('#todo-list');\n\n    list.addEventListener('click', function (e) {\n        if (e.target.className === 'delete') {\n            const listItem = e.target.parentElement;\n            list.removeChild(listItem);\n        }\n    });\n});",
+    "summary": "Implemented the JavaScript functionality to handle the deletion of todo items. When a user clicks on a delete button, the corresponding todo item is removed from the list.",
     "checklist": [
-        "Add event listener for DOMContentLoaded to ensure the DOM is fully loaded before attaching event handlers",
-        "Retrieve references to the 'Add' button, todo list, and input field",
-        "Add click event listener to the 'Add' button to create and append new todo items",
-        "Add keypress event listener to the input field to handle the 'Enter' key for adding new todo items",
-        "Clear the input field after a new todo item is added"
+        "Add an event listener for the DOMContentLoaded event to ensure the DOM is fully loaded before attaching event handlers.",
+        "Attach a click event listener to the todo list.",
+        "Check if the clicked element has the 'delete' class and remove its parent list item from the list."
     ]
 }
