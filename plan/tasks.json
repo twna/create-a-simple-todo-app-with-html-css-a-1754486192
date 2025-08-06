@@ -1,0 +1,44 @@
+[
+  {
+    "id": "task-1",
+    "agent": "frontend-developer",
+    "description": "Create the HTML structure for the todo app",
+    "file_path": "public/index.html"
+  },
+  {
+    "id": "task-2",
+    "agent": "frontend-developer",
+    "description": "Design the CSS for the todo app",
+    "file_path": "styles/main.css"
+  },
+  {
+    "id": "task-3",
+    "agent": "frontend-developer",
+    "description": "Write the JavaScript to handle todo item creation",
+    "file_path": "scripts/createTodo.js"
+  },
+  {
+    "id": "task-4",
+    "agent": "frontend-developer",
+    "description": "Write the JavaScript to handle todo item deletion",
+    "file_path": "scripts/deleteTodo.js"
+  },
+  {
+    "id": "task-5",
+    "agent": "frontend-developer",
+    "description": "Write the JavaScript to handle todo item completion toggle",
+    "file_path": "scripts/toggleTodo.js"
+  },
+  {
+    "id": "task-6",
+    "agent": "frontend-developer",
+    "description": "Write the JavaScript to handle the display of todo items",
+    "file_path": "scripts/displayTodos.js"
+  },
+  {
+    "id": "task-7",
+    "agent": "frontend-developer",
+    "description": "Write the JavaScript to handle local storage interaction for persistence",
+    "file_path": "scripts/localStorage.js"
+  }
+]
