@@ -1,9 +1,9 @@
 {
-    "code": "document.addEventListener('DOMContentLoaded', function () {\n    const list = document.querySelector('#todo-list');\n\n    list.addEventListener('click', function (e) {\n        if (e.target.className === 'delete') {\n            const listItem = e.target.parentElement;\n            list.removeChild(listItem);\n        }\n    });\n});",
-    "summary": "Implemented the JavaScript functionality to handle the deletion of todo items. When a user clicks on a delete button, the corresponding todo item is removed from the list.",
+    "code": "const todoStorage = {\n  save(todos) {\n    localStorage.setItem('todos', JSON.stringify(todos));\n  },\n  fetch() {\n    const todos = JSON.parse(localStorage.getItem('todos'));\n    return todos || [];\n  }\n};\n\nfunction saveTodos(todos) {\n  todoStorage.save(todos);\n}\n\nfunction getSavedTodos() {\n  return todoStorage.fetch();\n}\n\n// Example usage:\n// saveTodos([{ text: 'Learn JavaScript', completed: false }]);\n// const todos = getSavedTodos();\n// console.log(todos);",
+    "summary": "Implemented JavaScript functions for interacting with local storage to persist todo items. The `todoStorage` object contains `save` and `fetch` methods to store and retrieve todos. Two functions `saveTodos` and `getSavedTodos` are provided as interfaces to interact with the `todoStorage` object.",
     "checklist": [
-        "Add an event listener for the DOMContentLoaded event to ensure the DOM is fully loaded before attaching event handlers.",
-        "Attach a click event listener to the todo list.",
-        "Check if the clicked element has the 'delete' class and remove its parent list item from the list."
+        "Implemented a `todoStorage` object with `save` and `fetch` methods",
+        "Created `saveTodos` function to save the list of todos",
+        "Created `getSavedTodos` function to retrieve saved todos"
     ]
 }
